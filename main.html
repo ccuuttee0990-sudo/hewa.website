@@ -1,0 +1,244 @@
+<html lang="ckb" dri="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شوێنکاری وەستا هیوا|چاککردنی ‌ئۆتۆمبێلی ۆتۆماتیکی</title>
+<style>
+    *{box-sizing: border-box;}
+body {
+        background-color: #0d1b2a;
+        color: #ffffff;
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+    }
+header {
+        text-align: center;
+        padding: 10px 0 20px 0;
+    }
+
+    h1 {
+        color: #ffb703;
+        margin-bottom: 5px;
+    }
+
+    /* بەشی سەرەکی Layout: دابەشکردنی بۆ دوو لایەن */
+    .main-layout {
+        display: flex;
+        flex-direction: row-reverse; /* کارتەکان لای ڕاست، زانیاری لای چەپ */
+        gap: 25px;
+        max-width: 1100px;
+        margin: 20px auto;
+        align-items: flex-start;
+    }
+
+    /* لایەنی ڕاست: لیستەی کارتەکان */
+    .cards-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 320px;
+        flex-shrink: 0;
+    }
+
+    .card {
+        background: rgba(27, 38, 59, 0.85);
+        border: 2px solid #0077b6;
+        border-radius: 16px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        border-color: #ffb703;
+        box-shadow: 0 0 15px rgba(255, 183, 3, 0.4);
+    }
+
+    .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card h3 {
+        color: #ffffff;
+        margin: 5px 0;
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        color: #cbd5e1;
+        font-size: 0.88rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    /* لایەنی چەپ: بەشی چۆڵی نیشاندانی زانیارییەکان */
+    .details-column {
+        flex-grow: 1;
+        background: rgba(27, 38, 59, 0.95);
+        border: 2px solid #ffb703;
+        border-radius: 20px;
+        padding: 30px;
+        min-height: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .details-title {
+        color: #ffb703;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #d90429;
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .details-text {
+        color: #e0e1dd;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .details-badge {
+        background-color: #d90429;
+        color: #ffffff;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.95rem;
+        display: inline-block;
+    }
+
+    .placeholder-text {
+        color: #8d99ae;
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+
+    .footer-info {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        border-top: 1px solid #1b263b;
+        color: #e0e1dd;
+    }
+
+    .btn-back {
+        display: inline-block;
+        margin-top: 15px;
+        background-color: #d90429;
+        color: #fff;
+        padding: 10px 25px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-back:hover {
+        background-color: #ef233c;
+    }
+.main-layout {
+    display: block !important;
+    width: 100%;
+}
+</style>
+<header>
+    <h1>شوێنکاری وەستا هیوا</h1>
+    <p style="color: #ffb703; font-size: 1.1em;">کلیک لە سەر هەر خزمەتگوزارییەک بکە بۆ بینینی زانیاری تەواو ⚙️</p>
+</header>
+  <!-- ١. کارتەکان بە ئاسۆیی لە پاڵ یەکتردا -->
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: stretch; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+
+    <!-- کارتی ١: چاککردنی مەکینە -->
+    <div class="card" onclick="showDetails('چاککردنی مەکینە', 'پشکنین و دیاریکردنی کێشەکانی مەکینە و چاککردنی بەشەکان بە شێوەیەکی ورد و بسپۆڕانە.', 'تایبەتمەندی')" style="flex: 1; min-width: 220px; max-width: 300px; background: rgba(27, 38, 59, 0.8); border: 1px solid #0077b6; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer;">
+        <img src="logo.jpg" alt="مەکینە" style="width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+        <h3 style="color: #ffb703; margin-bottom: 8px;">چاککردنی مەکینە</h3>
+        <p style="color: #cbd5e1; font-size: 0.85rem;">پشکنین و دیاریکردنی کێشەکانی مەکینە...</p>
+    </div>
+
+    <!-- کارتی ٢: چاککردنی گێر -->
+    <div class="card" onclick="showDetails('چاککردنی گێر', 'پشکنین و چاککردنی تەواوی جۆرەکانی گێر بە بەرزترین ئاست.', 'گرنگی')" style="flex: 1; min-width: 220px; max-width: 300px; background: rgba(27, 38, 59, 0.8); border: 1px solid #0077b6; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer;">
+        <img src="logo.jpg" alt="گێر" style="width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+        <h3 style="color: #ffb703; margin-bottom: 8px;">چاککردنی گێر</h3>
+        <p style="color: #cbd5e1; font-size: 0.85rem;">پشکنین و چاککردنی تەواوی جۆرەکانی گێر...</p>
+    </div>
+
+    <!-- کارتی ٣: چاککردنی پێشی سەباره -->
+    <div class="card" onclick="showDetails('چاککردنی پێشی سەباره', 'پشکنین و چاککردنەوەی سیستەمی پێشی سەباره بۆ دڵنیابوون لە جێگیری.', 'پێویست')" style="flex: 1; min-width: 220px; max-width: 300px; background: rgba(27, 38, 59, 0.8); border: 1px solid #0077b6; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer;">
+        <img src="logo.jpg" alt="پێشی سەباره" style="width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
+        <h3 style="color: #ffb703; margin-bottom: 8px;">چاککردنی پێشی سەباره</h3>
+        <p style="color: #cbd5e1; font-size: 0.85rem;">پشکنین و چاککردنەوەی سیستەمی پێشی سەباره...</p>
+    </div>
+
+</div>
+
+<!-- ٢. باکسی زانیارییەکان لە خوارەوەی کارتەکان بە ئاسۆیی -->
+<div id="detailsBox" style="background: rgba(27, 38, 59, 0.95); border: 2px solid #ffb703; border-radius: 15px; padding: 25px; text-align: center; width: 100%; box-sizing: border-box;">
+    <h2 id="dTitle" style="color: #ffb703; margin-top: 0;">تکایە کلیک لە یەکێک لە خزمەتگوزارییەکان بکە</h2>
+    <p id="dText" style="color: #e2e8f0; line-height: 1.8; font-size: 1.05rem;">لێرەدا زانیاری ورد دەردەکەوێت کاتێک کلیک لەسەر هەر کارتێک دەکەیت.</p>
+    <div id="dBadge" style="display: inline-block; background-color: #e63946; color: white; padding: 6px 20px; border-radius: 20px; margin-top: 10px; font-weight: bold;">زانیاری</div>
+</div>
+
+<!-- لایەنی زانیارییەکان -->
+
+    </div>
+
+</div>
+
+<div class="footer-info">
+    <p>📍 ناو نیشان: سلێمانی | 📞 ژمارەی پەیوەندی: 07701585986</p>
+    <p>2026 شوێنکاری وەستا هیوا - متمانەی تۆ، پیشەسازیی ئێمە</p>
+   
+   <a href="index.html" class="btn-back">گەڕانەوە بۆ لاپەڕەی سەرەکی 🏠</a>
+<script>
+    function showDetails(title, text, badge) {
+        document.getElementById('dTitle').innerText = title;
+        document.getElementById('dText').innerText = text;
+        document.getElementById('dBadge').innerText = badge;
+    }
+</script>
+<!-- بەشی بۆچی وەستا هیوا هەڵدەبژێرین -->
+<div style="max-width: 1100px; margin: 50px auto 30px auto; background: rgba(27, 38, 59, 0.6); border-radius: 15px; padding: 25px; border: 1px solid #0077b6; text-align: center;">
+    <h2 style="color: #ffb703; font-size: 1.5rem; margin-bottom: 20px;">💡 بۆچی شوێنکاری وەستا هیوا هەڵدەبژێریت؟</h2>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1; min-width: 220px; background: rgba(13, 27, 42, 0.7); padding: 15px; border-radius: 10px; border-right: 3px solid #ffb703;">
+            <h4 style="color: #ffb703; margin-top: 0;">🔧 ئەزموونی بەرز</h4>
+            <p style="font-size: 0.9rem; color: #cbd5e1;">زیاتر لە ساڵانێکی درێژ ئەزموون لە چاککردنی گێر و مەکینە.</p>
+        </div>
+        <div style="flex: 1; min-width: 220px; background: rgba(13, 27, 42, 0.7); padding: 15px; border-radius: 10px; border-right: 3px solid #ffb703;">
+            <h4 style="color: #ffb703; margin-top: 0;">💻 پشکنینی کۆمپیوتەری</h4>
+            <p style="font-size: 0.9rem; color: #cbd5e1;">بەکارهێنانی نوێترین ئامێری دیلاگ بۆ دۆزینەوەی وردی کێشەکان.</p>
+        </div>
+        <div style="flex: 1; min-width: 220px; background: rgba(13, 27, 42, 0.7); padding: 15px; border-radius: 10px; border-right: 3px solid #ffb703;">
+            <h4 style="color: #ffb703; margin-top: 0;">🛡️ گەرەنتی کارکردن</h4>
+            <p style="font-size: 0.9rem; color: #cbd5e1;">پێشکەشکردنی گەرەنتی لەسەر تەواوی خزمەتگوزارییەکانمان.</p>
+        </div>
+    </div>
+</div>
+
+<!-- بەشی گووگڵ ماپ و ناونیشان -->
+<div style="max-width: 1100px; margin: 30px auto; text-align: center;">
+    <h3 style="color: #ffb703;">📍 شوێن و ناونیشانی ئێمە لەسەر نەخشە</h3>
+    <p style="color: #cbd5e1;">سلێمانی | 📞 ژمارەی پەیوەندی: <strong style="color: #ffb703;">07701585986</strong></p>
+    
+    <div style="">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.3898617023074!2d45.393656!3d35.593448599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400033f119821e7b%3A0x66e23c8c30d83841!2z2LTZiNmO24zZg9in2LHbjCDZiNmE2LPZgtinINmH24zZiNin!5e0!3m2!1sen!2siq!4v1789073421186!5m2!1sen!2siq" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
